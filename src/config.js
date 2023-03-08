@@ -25,6 +25,7 @@ export const trustifiedContracts = {
   },
 };
 
+
 export const chain = {
   3141: "fevm",
   80001: "mumbai",

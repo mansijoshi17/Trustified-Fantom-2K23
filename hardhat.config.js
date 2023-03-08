@@ -1,39 +1,41 @@
-require("@nomicfoundation/hardhat-toolbox");
-require("hardhat-deploy");
-require("hardhat-deploy-ethers");
-require("./tasks");
-require("dotenv").config();
 
-const PRIVATE_KEY = process.env.REACT_APP_PRIVATE_KEY;
+require("dotenv").config({ path: "./.env" });
+require("@nomiclabs/hardhat-waffle");
+require("@nomiclabs/hardhat-etherscan");
+
+const PRIVATE_KEY = process.env.ACCOUNT_PRIVATE_KEY;
+const FANTOM_API_KEY = process.env.FANTOM_API_KEY;
 
 module.exports = {
-  solidity: "0.8.4",
-  defaultNetwork: "hyperspace",
+  solidity: '0.8.4',
+  settings: {
+    optimizer: {
+      enabled: true,
+      runs: 200
+    }
+  },
   networks: {
-    hardhat: {},
-    hyperspace: {
-      chainId: 3141,
-      url: "https://api.hyperspace.node.glif.io/rpc/v1",
-      accounts: [PRIVATE_KEY],
+    mainnet: {
+      url: `https://rpcapi.fantom.network`,
+      chainId: 250,
+      accounts: [`0x${PRIVATE_KEY}`]
     },
-    // mumbai: {
-    //   url: `https://polygon-mumbai.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_KEY}`,
-    //   accounts: [PRIVATE_KEY],
-    // },
-    // goerli: {
-    //   url: `https://eth-goerli.alchemyapi.io/v2/${process.env.REACT_APP_ALCHEMY_KEY_GOERLI}`,
-    //   accounts: [PRIVATE_KEY],
-    // },
-    // bsc: {
-    //   url: "https://data-seed-prebsc-1-s1.binance.org:8545",
-    //   chainId: 97,
-    //   accounts: [PRIVATE_KEY]
-    // },
+    testnet: {
+      url: `https://rpc.testnet.fantom.network`,
+      chainId: 4002,
+      accounts: [`0x${PRIVATE_KEY}`]
+    },
+    coverage: {
+      url: 'http://localhost:8555'
+    },
+    localhost: {
+      url: `http://127.0.0.1:8545`
+    }
   },
-  paths: {
-    sources: "./contracts",
-    tests: "./test",
-    cache: "./cache",
-    artifacts: "./artifacts",
-  },
+  etherscan: {
+    apiKey: {
+      ftmTestnet: FANTOM_API_KEY,
+      opera: FANTOM_API_KEY
+    }
+  }
 };
