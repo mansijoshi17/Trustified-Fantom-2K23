@@ -123,3 +123,8 @@ module.exports = {
 
 
 ```
+### Contract on Fantom Testnet:
+
+https://testnet.ftmscan.com/address/0xE1c9f4acc7ea084D4891819B962157B3B1E8578a
+
+https://testnet.ftmscan.com/address/0x8b0B87e6C1D2F7Bb513C08aD268F97B89f3561E5
