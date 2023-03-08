@@ -1,73 +1,80 @@
-# Getting Started with Create React App
+## Trustified
+![MicrosoftTeams-image (21)](https://user-images.githubusercontent.com/45895007/216990763-90a45a6f-7ce6-466f-b131-0806dc581f5c.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Trustified is a platform to issue forgery proof digital certificates and badges on Blockchain.**
 
-## Available Scripts
+# Why Trustified?
 
-In the project directory, you can run:
+**The traditional way of issuing Physical and Digital Certificates consists of the risk of permanent availability and document forgery issues.**
 
-### `npm start`
+**Trustified provides**:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Availability: All the data will be stored on decentralised storage of the Filecoin network.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Forgery Proof: Each certificate and badge will be an NFT on the FVM blockchain.
 
-### `npm test`
+Ownership: Ensures true ownership of digital badges and certificates.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+# Built for
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Individuals**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+==> Any individual from course creator to influencer can issue NFT Certificates and badges to community members.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Organisations** 
 
-### `npm run eject`
+==> Educational institutes and companies can issue degree certificates and performance reward badges to the members.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**DAOs**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+==> DAOs can issue role based membership badges/certificates to performance based reputation certificates.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Developers**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+==> Customised token gated access opens up wide range of possibilities for developers to build on top of Trustified
 
-## Learn More
+# Issue cool Badges
+**NFT badges are the best way to create a lifelong memory and can also be issued for various purposes like NFT event tickets, token gated community access, and as performance based rewards to community members.**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Landing Page
 
-### Analyzing the Bundle Size
+<img width="1280" alt="Screenshot 2023-02-06 at 6 59 01 PM" src="https://user-images.githubusercontent.com/45895007/216987184-ff33e255-4081-41d0-ad8a-e92c52eb2c07.png">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Certificate Templates
 
-### Making a Progressive Web App
+<img width="1280" alt="Screenshot 2023-02-06 at 6 59 33 PM" src="https://user-images.githubusercontent.com/45895007/216987247-cb93bb95-6aa8-46d0-9a21-bcadc4907710.png">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Badge Templates
 
-### Advanced Configuration
+<img width="1280" alt="Screenshot 2023-02-06 at 6 59 46 PM" src="https://user-images.githubusercontent.com/45895007/216987372-819247f1-a6d3-41a1-8e40-5be847477e42.png">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# NFT Lists
 
-### Deployment
+<img width="1280" alt="Screenshot 2023-02-06 at 6 59 54 PM" src="https://user-images.githubusercontent.com/45895007/216987435-b8891ba4-675d-4063-b49f-f1d4e21c3058.png">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+# Collector List
 
-### `npm run build` fails to minify
+<img width="1280" alt="Screenshot 2023-02-06 at 7 00 04 PM" src="https://user-images.githubusercontent.com/45895007/216987604-cba8143b-f04f-4bbc-9855-82677eb50895.png">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Create Certificate Modal
+<img width="1280" alt="Screenshot 2023-02-06 at 7 01 16 PM" src="https://user-images.githubusercontent.com/45895007/216987778-46ec5fa9-9e03-462e-b782-01cb194576fb.png">
+
+
+#Create Badge Modal
+
+<img width="1280" alt="Screenshot 2023-02-06 at 7 00 30 PM" src="https://user-images.githubusercontent.com/45895007/216987832-c674ab75-b326-4b58-ad1f-652f1a023bf3.png">
+
+# Claim Certificate  
+
+<img width="1228" alt="Screenshot 2023-02-06 at 7 25 47 PM" src="https://user-images.githubusercontent.com/45895007/216989948-5ec7e986-2a2b-4176-ae9a-68e6fcbeb933.png">
+
+
+
+
 
 
 ```
