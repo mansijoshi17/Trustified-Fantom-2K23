@@ -30,10 +30,10 @@ const CallToAction = () => {
                   Trustified provides:
                 </li>
                 <li>
-                  <i className="fa fa-check"></i>Availability: All the data will be stored on decentralised storage of the Filecoin network.
+                  <i className="fa fa-check"></i>Availability: All the data will be stored on decentralised storage of the ipfs network.
                 </li>
                 <li>
-                  <i className="fa fa-check"></i>Forgery Proof: Each certificate and badge will be an NFT on the FVM blockchain.
+                  <i className="fa fa-check"></i>Forgery Proof: Each certificate and badge will be an NFT on the Fantom blockchain.
                 </li>
                 <li>
                   <i className="fa fa-check"></i>Ownership: Ensures true ownership of digital badges and certificates.

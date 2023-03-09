@@ -14,6 +14,7 @@ contract Trustified is ERC721URIStorage {
     Counters.Counter private _eventIdCounter;
 
     mapping(uint256 => uint256[]) public tokenIds;
+    uint256 public newEventId;
 
     event TokenMinted(address, uint256);
     event TokenTransfered(address, address, uint256);
@@ -35,6 +36,7 @@ contract Trustified is ERC721URIStorage {
             uint256 tokenId = safeMint(tokenUris[i]);
             tokenIds[eventId].push(tokenId);
         }
+        newEventId = eventId;
         emit TokenMinted(msg.sender, eventId);
     }
 
@@ -45,6 +47,7 @@ contract Trustified is ERC721URIStorage {
             uint256 tokenId = safeMint(tokenUri);
             tokenIds[eventId].push(tokenId);
         }
+        newEventId = eventId;
         emit TokenMinted(msg.sender, eventId);
     }
 

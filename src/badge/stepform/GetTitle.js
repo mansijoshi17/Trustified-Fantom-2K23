@@ -54,7 +54,7 @@ function GetTitle() {
           value={formdata.description}
         />
       </Stack>
-      <Box sx={{ minWidth: 120 }}>
+      {/* <Box sx={{ minWidth: 120 }}>
         <FormControl fullWidth>
           <FormLabel id="demo-controlled-radio-buttons-group">
             Select Your Network
@@ -110,7 +110,7 @@ function GetTitle() {
             </Stack>
           </RadioGroup>
         </FormControl>
-      </Box>
+      </Box> */}
     </div>
   );
 }

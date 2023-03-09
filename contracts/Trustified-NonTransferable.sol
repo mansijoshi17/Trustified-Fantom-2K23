@@ -15,6 +15,7 @@ contract TrustifiedNonTransferable is ERC721URIStorage {
     mapping(uint256 => uint256[]) public tokenIds;
 
     mapping(uint256 => bool) private transferStatus;
+    uint256 public newEventId;
 
     event TokenMinted(address, uint256);
     event TokenTransfered(address, address, uint256);
@@ -36,6 +37,7 @@ contract TrustifiedNonTransferable is ERC721URIStorage {
             uint256 tokenId = safeMint(tokenUris[i]);
             tokenIds[eventId].push(tokenId);
         }
+        newEventId = eventId;
         emit TokenMinted(msg.sender, eventId);
     }
 
@@ -46,6 +48,7 @@ contract TrustifiedNonTransferable is ERC721URIStorage {
             uint256 tokenId = safeMint(tokenUri);
             tokenIds[eventId].push(tokenId);
         }
+        newEventId = eventId;
         emit TokenMinted(msg.sender, eventId);
     }
 

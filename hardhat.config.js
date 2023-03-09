@@ -3,8 +3,8 @@ require("dotenv").config({ path: "./.env" });
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-etherscan");
 
-const PRIVATE_KEY = process.env.ACCOUNT_PRIVATE_KEY;
-const FANTOM_API_KEY = process.env.FANTOM_API_KEY;
+const PRIVATE_KEY = process.env.REACT_APP_PRIVATE_KEY;
+const FANTOM_API_KEY = process.env.REACT_APP_FANTOM_API_KEY;
 
 module.exports = {
   solidity: '0.8.4',

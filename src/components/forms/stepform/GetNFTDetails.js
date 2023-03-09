@@ -55,7 +55,7 @@ function GetNFTDetails() {
               value={formdata.description}
             />
           </Stack>
-          <Box sx={{ minWidth: 120 }}>
+          {/* <Box sx={{ minWidth: 120 }}>
             <FormControl fullWidth>
               <FormLabel id="demo-controlled-radio-buttons-group">
                 Select Your Network
@@ -111,7 +111,7 @@ function GetNFTDetails() {
                 </Stack>
               </RadioGroup>
             </FormControl>
-          </Box>
+          </Box> */}
         </div>
       </div>
     </div>

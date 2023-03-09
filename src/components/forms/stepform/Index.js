@@ -26,7 +26,7 @@ export default function HorizontalLinearStepper() {
   const formdata = formdatavalue.labelInfo.formData;
   const btnDisbaled =
     formdata.title.length > 0 &&
-    formdata.chain.length > 0 &&
+    // formdata.chain.length > 0 &&
     formdata.description.length > 0 
 
   const isStepOptional = (step) => {

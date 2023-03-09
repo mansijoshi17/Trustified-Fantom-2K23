@@ -55,65 +55,6 @@ export const Web3ContextProvider = (props) => {
     initialize();
   }, []);
 
-  const issueCredId = async (issuerName, address) => {
-    const trustifiedCredsCon = new ethers.Contract(
-      trustifiedContracts["fevm"].trustifiedCreds,
-      trustifiedCredsabi,
-      signer
-    );
-
-    let createCredIssuerTransaction = await trustifiedCredsCon.createCredIssuer(
-      [[trustifiedContracts["fevm"].verifier, 16]],
-      address,
-      issuerName,
-      "TFI" //Trustified Issers
-    );
-
-    let txci = await createCredIssuerTransaction.wait();
-
-    if (txci) {
-      let event = await txci.events[1];
-      let trustifiedCredAddress = await event.args[1];
-      let trustifiedCredContract = new ethers.Contract(
-        trustifiedCredAddress,
-        trustifiedCredabi,
-        signer
-      );
-
-      let createCredTransaction = await trustifiedCredContract.issueCred(
-        16,
-        0,
-        "Cred URI",
-        {
-          gasLimit: 1000000000,
-        }
-      );
-
-      let txcc = await createCredTransaction.wait();
-
-      if (txcc) {
-        let event = await txcc.events[1];
-
-        let credId = await event.args[1];
-
-        // console.log(typeof Number(credId));
-        let identity = new Identity();
-        console.log();
-        let claimCredTransaction =
-          await trustifiedCredContract.claimCredToTrustifiedIssuer(
-            Number(credId),
-            identity._commitment,
-            {
-              gasLimit: 1000000000,
-            }
-          );
-
-        let txc = await claimCredTransaction.wait();
-        console.log(txc, "txc");
-      }
-    }
-  };
-
   const connectWallet = async (issuerName) => {
     const { ethereum } = window;
     setaLoading(true);
@@ -189,30 +130,6 @@ export const Web3ContextProvider = (props) => {
     } else {
       toast.error("You don't have Trustified NFT");
     }
-
-    // const trustifiedContract = new ethers.Contract(
-    //   trustifiedContracts[currentChain].transferable,
-    //   trustifiedContractAbi.abi,
-    //   signer
-    // );
-    // const trustifiedNonTransferableContract = new ethers.Contract(
-    //   trustifiedContracts[currentChain].nonTransferable,
-    //   trustifiedNonTransferableContractAbi.abi,
-    //   signer
-    // );
-
-    // let balance1 = await trustifiedContract.balanceOf(accounts[0]);
-    // let balance2 = await trustifiedNonTransferableContract.balanceOf(
-    //   accounts[0]
-    // );
-
-    // if (Number(balance1) > 0 || Number(balance2) > 0) {
-    //   setAddress(accounts[0]);
-    //   window.localStorage.setItem("address", accounts[0]);
-    //   setUpdate(!update);
-    // } else {
-    //   toast.error("You don't have Trustified NFT");
-    // }
   };
 
   const disconnectWallet = () => {
@@ -247,87 +164,12 @@ export const Web3ContextProvider = (props) => {
     return result;
   }
 
-  // const createBadgeCollecion = async (data, firebasedata, type) => {
-  //   try {
-  //     const trustifiedContract = new ethers.Contract(
-  //       firebasedata.transferable == "on"
-  //         ? trustifiedContracts[firebasedata.chain].nonTransferable
-  //         : trustifiedContracts[firebasedata.chain].transferable,
-  //       firebasedata.transferable == "on"
-  //         ? trustifiedNonTransferableContractAbi.abi
-  //         : trustifiedContractAbi.abi,
-  //       signer
-  //     );
-  //     let transactionMint = await trustifiedContract.bulkMintERC721(
-  //       data.tokenUris
-  //     ); // Bulk Mint NFT collection.
-  //     let txm = await transactionMint.wait();
-  //     console.log(txm.events, "events");
-  //     if (txm) {
-  //       let event = await txm.events[4];
-  //       var eventId = event?.args[1];
-  //       console.log(Number(eventId), "eventId");
-  //       firebasedata.contract = trustifiedContract.address;
-  //       firebasedata.userId = userId;
-  //       firebasedata.eventId = Number(eventId);
-  //       await addCollection(firebasedata);
-
-  //       let tokenIds = await trustifiedContract.getTokenIds(
-  //         parseInt(Number(eventId))
-  //       );
-
-  //       var array = [];
-  //       for (let i = 0; i < tokenIds.length; i++) {
-  //         let obj = {};
-  //         let claimToken = generateClaimToken(5);
-  //         const tokenCID = await trustifiedContract.tokenURI(
-  //           Number(tokenIds[i])
-  //         );
-  //         let d = await axios.get(
-  //           `https://nftstorage.link/ipfs/${tokenCID}/metadata.json`
-  //         );
-  //        https://nftstorage.link/ipfs/bafybeihcvktcuqoz2htciiujdy4753r2q7g2u2jwjkxhyfvk6yg7epx3aq/JaydipPatel.png
-  //        https://nftstorage.link/ipfs/bafyreigng7yznv7bnm5nawmlxqmezvg3b3xnksjlzxuyiaeacx55y76ab4/metadata.json
-  //         array.push([
-  //           d.data.claimer,
-  //           `http://localhost:3000/claim/${claimToken}`,
-  //         ]);
-  //         obj.token = claimToken;
-  //         obj.tokenContract = trustifiedContract.address;
-  //         obj.tokenId = Number(tokenIds[i]);
-  //         obj.claimerAddress = "";
-  //         obj.ipfsurl = `https://nftstorage.link/ipfs/${tokenCID}/metadata.json`;
-  //         obj.chain = firebasedata.chain;
-  //         obj.name = d.data.claimer;
-  //         obj.claimed = "No";
-  //         await addCollectors(obj);
-  //       } // Generating CSV file with unique link and storing data in firebase.
-  //       var csv = "Name,ClaimUrl\n";
-  //       //merge the data with CSV
-  //       array.forEach(function (row) {
-  //         csv += row.join(",");
-  //         csv += "\n";
-  //       });
-  //       var hiddenElement = document.createElement("a");
-  //       hiddenElement.href = "data:text/csv;charset=utf-8," + encodeURI(csv);
-  //       hiddenElement.target = "_blank";
-  //       //provide the name for the CSV file to be downloaded
-  //       hiddenElement.download = `${firebasedata.title}.csv`;
-  //       hiddenElement.click();
-  //       toast.success("Successfully created NFT collection!!");
-  //     }
-  //   } catch (err) {
-  //     console.log(err);
-  //     toast.error("Something want wrong!!", err);
-  //   }
-  // };
-
   const createNFTCollecion = async (data, firebasedata, type) => {
     try {
       const trustifiedContract = new ethers.Contract(
         firebasedata.transferable == "on"
-          ? trustifiedContracts[firebasedata.chain].nonTransferable
-          : trustifiedContracts[firebasedata.chain].transferable,
+          ? trustifiedContracts.nonTransferable
+          : trustifiedContracts.transferable,
         firebasedata.transferable == "on"
           ? trustifiedNonTransferableContractAbi.abi
           : trustifiedContractAbi.abi,
@@ -354,14 +196,8 @@ export const Web3ContextProvider = (props) => {
       let txm = await transactionMint.wait();
       console.log(txm, "txm");
       if (txm) {
-        var event;
-        if (type == "badge") {
-          event = await txm.events[parseInt(firebasedata.quantity)];
-        } else {
-          event = await txm.events[parseInt(data?.tokenUris?.length)];
-        }
-
-        var eventId = event?.args[1];
+        var eventId = await trustifiedContract.newEventId();
+        console.log(Number(eventId));
         firebasedata.contract = trustifiedContract.address;
         firebasedata.userId = userId;
         firebasedata.eventId = parseInt(Number(eventId));
