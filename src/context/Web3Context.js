@@ -6,7 +6,6 @@ import trustifiedContractAbi from "../abi/Trustified.json";
 import trustifiedNonTransferableContractAbi from "../abi/TrustifiedNonTransferable.json";
 import trustifiedCredsabi from "../abi/TrustifiedCreds.json";
 import trustifiedCredabi from "../abi/TrustifiedCred.json";
-import { Identity } from "@semaphore-protocol/identity";
 import { async } from "@firebase/util";
 import { toast } from "react-toastify";
 import { firebaseDataContext } from "./FirebaseDataContext";
