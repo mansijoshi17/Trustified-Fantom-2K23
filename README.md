@@ -38,6 +38,13 @@ Ownership: Ensures true ownership of digital badges and certificates.
 **NFT badges are the best way to create a lifelong memory and can also be issued for various purposes like NFT event tickets, token gated community access, and as performance based rewards to community members.**
 
 
+```
+### Contract on Fantom Testnet:
+
+https://testnet.ftmscan.com/address/0xE1c9f4acc7ea084D4891819B962157B3B1E8578a
+
+https://testnet.ftmscan.com/address/0x8b0B87e6C1D2F7Bb513C08aD268F97B89f3561E5
+
 
 
 # Landing Page
@@ -122,9 +129,4 @@ module.exports = {
 };
 
 
-```
-### Contract on Fantom Testnet:
 
-https://testnet.ftmscan.com/address/0xE1c9f4acc7ea084D4891819B962157B3B1E8578a
-
-https://testnet.ftmscan.com/address/0x8b0B87e6C1D2F7Bb513C08aD268F97B89f3561E5
